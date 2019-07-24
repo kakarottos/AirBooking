@@ -1,0 +1,44 @@
+<% include partials/header.ejs %>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+
+    <% if (tourist) { %>
+        <form class="add-tourist-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="form-control" name="first_name" id="first-name" value="<%= tourist.first_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" id="last-name" value="<%= tourist.last_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" value="<%= tourist.user_name %>" required disabled title="Username can't be changed">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="number">Number</label>
+                    <input type="number" class="form-control" name="number" id="number" placeholder="Number" value="<%= tourist.number %>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="position">Position</label>
+                    <select id="position" name="position" class="form-control" required>
+                        <option selected><%= tourist.position %></option>
+                        <option>Goalkeeper</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success float-right">Update tourist</button>
+        </form>
+    <% } else { %>
+        <p class="text-center">tourist Not Found. Go <a href="/addTourist">here</a> to add tourists.</p>
+    <% } %>
+</div>
+</div>
+</body>
+</html>

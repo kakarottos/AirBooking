@@ -1,0 +1,30 @@
+{
+  "name": "mqsql-crud-app",
+  "version": "1.0.0",
+  "description": "\"# node-mysql-crud-app\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-fileupload": "^0.4.0",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1",
+    "req-flash": "0.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kakarottos/AirBook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kakarottos/AirBook/issues"
+  },
+  "homepage": "https://github.com/kakarottos/AirBook#readme"
+}

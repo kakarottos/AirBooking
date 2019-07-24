@@ -1,0 +1,49 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-tourist-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="first_name" id="first-name" placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="last_name" id="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <select id="gender" name="gender" class="form-control" required>
+                        <option selected disabled>Choose gender</option>
+                        <option>Famale</option>
+                        <option>Male</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="date" class="form-control" name="birth-date" id="birth-date" placeholder="Birth date" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="country" id="country" placeholder="Country" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <select id="flightsId" name="flightsId" class="form-control" required>
+                        <option selected disabled>Choose flight</option>
+                        <% flightList.forEach((flighty, index) => { %>
+                            <option ><%= flighty.date_start %><%= flighty.cost %> </option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <input type="text" class="form-control" name="note" id="note" placeholder="Note" required>
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Add tourist</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
